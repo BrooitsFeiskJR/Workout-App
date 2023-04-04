@@ -6,6 +6,7 @@ import android.os.CountDownTimer
 import android.view.View
 import android.widget.Toast
 import dev.tontech.workoutapp.databinding.ActivityExerciseBinding
+import dev.tontech.workoutapp.model.Exercise
 
 class ExerciseActivity : AppCompatActivity() {
     private var binding: ActivityExerciseBinding? = null
@@ -15,6 +16,9 @@ class ExerciseActivity : AppCompatActivity() {
 
     private var exerciseTimer: CountDownTimer? = null
     private var exerciseProgress: Int = 0
+
+    private var exerciseList: ArrayList<Exercise>? = null
+    private var currentExercisePosition: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,8 @@ class ExerciseActivity : AppCompatActivity() {
         if(supportActionBar != null) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
+        exerciseList = Constants.defaultExerciseList()
+
         binding?.toolbarExercise?.setNavigationOnClickListener {
             onBackPressed()
         }
@@ -64,6 +70,7 @@ class ExerciseActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+                currentExercisePosition++
                 setupExerciseView()
             }
 
