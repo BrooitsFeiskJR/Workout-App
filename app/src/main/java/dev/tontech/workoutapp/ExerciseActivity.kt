@@ -11,7 +11,6 @@ import android.view.View
 import android.widget.Toast
 import dev.tontech.workoutapp.databinding.ActivityExerciseBinding
 import dev.tontech.workoutapp.model.Exercise
-import java.net.URI
 import java.util.Locale
 
 class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
@@ -44,7 +43,7 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         tts = TextToSpeech(this, this)
 
         binding?.toolbarExercise?.setNavigationOnClickListener {
-            onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
 
         setupRestView()
