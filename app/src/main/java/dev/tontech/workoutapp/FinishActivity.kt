@@ -24,6 +24,7 @@ class FinishActivity : AppCompatActivity() {
         }
 
         binding?.btnFinish?.setOnClickListener {
+            finish()
             val intent: Intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
