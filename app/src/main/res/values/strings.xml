@@ -20,4 +20,6 @@
     <string name="inMetricUnitHeightText">HEIGHT (in cm)</string>
     <string name="your_bmi">YOUR BMI</string>
     <string name="calculate">CALCULATE</string>
+    <string name="calendar">calendar</string>
+    <string name="image">Image</string>
 </resources>
