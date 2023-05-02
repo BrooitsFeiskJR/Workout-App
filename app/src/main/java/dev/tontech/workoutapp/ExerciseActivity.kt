@@ -176,9 +176,10 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
                     setupRestView()
                 } else {
-                    finish()
                     val intent = Intent(this@ExerciseActivity, FinishActivity::class.java)
                     startActivity(intent)
+                    finish()
+
                 }
             }
 
